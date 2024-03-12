@@ -75,7 +75,7 @@ const UserForm = () => {
               <input type="password" onChange={ handlePassword } />
               { passwordError && <p style={{color:'red'}}>{ passwordError }</p> }
             </div>
-            <input type="submit" value="submit"/>
+            <input type="submit" value="submit" disabled={username.length < 3 || emailError || passwordError || !email.includes("@") || password.length < 8}/>
         </form>
     );
 };
