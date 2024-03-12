@@ -10,14 +10,14 @@ const UserForm = () => {
     const createUser = (e) => {
         e.preventDefault();
         const newUser = { username, email, password };
-        console.log("Welcome", newUser);
+        console.log("Welcome", newUser.username);
         setHasBeenSubmitted( true );
     };
     return (
         <form onSubmit={ createUser }>
           {
           hasBeenSubmitted ? 
-          <h3>Thank you for submitting the form!</h3> :
+          <h3>{`Thank you, ${username} for submitting the form!`}</h3> :
           <h3>Welcome, please submit the form.</h3> 
             }
             <div>
